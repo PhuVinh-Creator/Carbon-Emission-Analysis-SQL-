@@ -29,9 +29,9 @@ LIMIT 5;
 
 
 ## 2. Data exploration
-### Duplicate data
+Duplicate data
 
-### Number of unique product
+Number of unique product
 
 ## 3. Data Analysis
 ### 3.1. Which products contribute the most to carbon emissions?
