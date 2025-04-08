@@ -5,12 +5,13 @@ This report aims to analyze carbon emissions to examine the carbon footprint acr
 
 ![image](https://github.com/user-attachments/assets/e50232d7-f7d9-4990-ba44-fbc67708b562) 
 
-## 1.1 Data model
+## 1.1. Data model
 The dataset consists of 4 tables containing information regarding carbon emissions generated during the production of goods.
 Table 'product_emissions'
+
 ![image](https://github.com/user-attachments/assets/acb7d961-bf0a-4ce0-8325-ae9a512b054d)
 
-## 1.2 Data Structure
+## 1.2. Data Structure
 Table 'product_emissions'
 --sql
 SELECT *
