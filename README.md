@@ -13,10 +13,11 @@ Table 'product_emissions'
 
 ## 1.2. Data Structure
 Table 'product_emissions'
---sql
+```SQL
 SELECT *
 FROM product_emissions pe
 LIMIT 5;
+```
 
 |id|company_id|country_id|industry_group_id|year|product_name|weight_kg|carbon_footprint_pcf|upstream_percent_total_pcf|operations_percent_total_pcf|downstream_percent_total_pcf|
 |--|----------|----------|-----------------|----|------------|---------|--------------------|--------------------------|----------------------------|----------------------------|
