@@ -60,6 +60,8 @@ LIMIT 10;
 |Mercedes-Benz S-Class (S 500)|85000.00|
 |Mercedes-Benz SL (SL 350)|72000.00|
 
+Discovery:
+
 ### 3.2. What are the industry groups of these products?
 ```sql
 -- industry_groups_of_these_products
@@ -87,6 +89,8 @@ LIMIT 10;
 |Automobiles & Components|Mercedes-Benz S-Class (S 500)|85000.00|
 |Automobiles & Components|Mercedes-Benz SL (SL 350)|72000.00|
 
+Discovery:
+
 ### 3.3. What are the industries with the highest contribution to carbon emissions?
 ```sql
 -- top_10_industries_by_total_carbon_emission
@@ -111,6 +115,8 @@ LIMIT 10;
 |Chemicals|62369.00|
 |Software & Services|46544.00|
 |Media|23017.00|
+
+Discovery:
 
 ### 3.4. What are the companies with the highest contribution to carbon emissions?
 ```sql
@@ -137,6 +143,8 @@ LIMIT 10;
 |"Lexmark International, Inc."|132012.00|
 |"Daikin Industries, Ltd."|105600.00|
 
+Discovery:
+
 ### 3.5. What are the countries with the highest contribution to carbon emissions?
 ```sql
 -- top_10_countries_by_total_carbon_emission
@@ -161,6 +169,8 @@ LIMIT 10;
 |Italy|20000.00|
 |Ireland|11160.00|
 |India|9328.00|
+
+Discovery:
 
 ### 3.6. What is the trend of carbon footprints (PCFs) over the years?
 ```sql
@@ -214,3 +224,17 @@ ORDER BY
 |Tobacco|0.00|0.00|1.00|0.00|0.00|
 |Trading Companies & Distributors and Commercial Services & Supplies|0.00|0.00|239.00|0.00|0.00|
 |Utilities|122.00|0.00|0.00|122.00|0.00|
+
+Discovery:
+
+### 3.7. Which industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
+![image](https://github.com/user-attachments/assets/bd4cb733-e7ba-4008-94ba-c5c9280ec988)
+
+Discovery:
+
+*Note: there's a suspicious outliner in "Electrical Equipment and Machinery" row, so I won't include in the discovery. (In real-life, to solve this, I'll contact relevant department to clarify this case)
+
+![image](https://github.com/user-attachments/assets/40e12c49-6ed7-4b55-8b55-44d5060c8e28)
+
+
+
