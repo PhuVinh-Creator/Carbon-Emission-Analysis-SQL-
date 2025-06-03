@@ -288,7 +288,7 @@ ORDER BY
 - "Technology Hardware & Equipment" and "Pharmaceuticals, Biotechnology & Life Sciences" both skyrocket at 2014 but then simultaneously decrease in the next two years.
 - "Food, Beverage & Tobacco" sees its peak in 2016 before reducing to its normal emission.
 
-_*Note:_ there's a suspicious outliner in "Electrical Equipment and Machinery" row, so I won't include in the discovery. (In real-life, to solve this, I'll contact relevant department to clarify this case)
+_*Note:_ there's a suspicious outlier in "Electrical Equipment and Machinery" row, so I won't include in the discovery. (In real-life, to solve this, I'll contact relevant department to clarify this case)
 
 ![image](https://github.com/user-attachments/assets/40e12c49-6ed7-4b55-8b55-44d5060c8e28)
 
