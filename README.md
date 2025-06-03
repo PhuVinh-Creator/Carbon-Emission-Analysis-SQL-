@@ -18,7 +18,6 @@ SELECT *
 FROM product_emissions pe
 LIMIT 5;
 ```
-
 |id|company_id|country_id|industry_group_id|year|product_name|weight_kg|carbon_footprint_pcf|upstream_percent_total_pcf|operations_percent_total_pcf|downstream_percent_total_pcf|
 |--|----------|----------|-----------------|----|------------|---------|--------------------|--------------------------|----------------------------|----------------------------|
 |10056-1-2014|82|28|2|2014|Frosted Flakes(R) Cereal|0.7485|2|57.50|30.00|12.50|
@@ -26,7 +25,6 @@ LIMIT 5;
 |10222-1-2013|83|28|8|2013|Office Chair|20.68|73|80.63|17.36|2.01|
 |10261-1-2017|14|16|25|2017|Multifunction Printers|110.0|1488|30.65|5.51|63.84|
 |10261-2-2017|14|16|25|2017|Multifunction Printers|110.0|1818|25.08|4.51|70.41|
-
 
 ## 2. Data exploration
 A) Duplicate data
@@ -88,7 +86,6 @@ GROUP BY product_name
 ORDER BY carbon_footprint_pcf_average DESC
 LIMIT 10;
 ```
-
 |product_name|carbon_footprint_pcf_average|
 |------------|----------------------------|
 |Wind Turbine G128 5 Megawats|3718044.00|
@@ -103,6 +100,8 @@ LIMIT 10;
 |Mercedes-Benz SL (SL 350)|72000.00|
 
 #### • Discovery: 
+- Size scaling: 5MW turbines aren't just 2.5x larger than 2MW - their footprint is 2-3x higher, suggesting manufacturing complexity increases non-linearly
+- Manufacturing vs. operational impact: These figures represent production emissions, not lifetime operational impact where wind turbines would be net-negative
 
 ### 3.2. What are the industry groups of these products?
 ```sql
@@ -117,7 +116,6 @@ GROUP BY product_name
 ORDER BY carbon_footprint_pcf_average DESC
 LIMIT 10;
 ```
-
 |industry_group|product_name|carbon_footprint_pcf_average|
 |--------------|------------|----------------------------|
 |Electrical Equipment and Machinery|Wind Turbine G128 5 Megawats|3718044.00|
@@ -132,6 +130,9 @@ LIMIT 10;
 |Automobiles & Components|Mercedes-Benz SL (SL 350)|72000.00|
 
 #### • Discovery: 
+- Clean energy: Wind turbines have massive manufacturing footprints
+- Vehicle type impact: Commercial/utility vehicles have higher manufacturing emissions than luxury passenger cars
+- Manufacturing intensity: Complex, large-scale products (turbines, steel structures) dominate the footprint rankings
 
 ### 3.3. What are the industries with the highest contribution to carbon emissions?
 ```sql
@@ -159,6 +160,9 @@ LIMIT 10;
 |Media|23017.00|
 
 #### • Discovery: 
+- Scale of electrical equipment: The massive footprint suggests energy-intensive manufacturing processes for large-scale equipment
+- Automotive consolidation: The 2.6M total likely represents the combined footprint of major auto manufacturers
+- Technology paradox: Companies making hardware have high footprints, while software companies are relatively low
 
 ### 3.4. What are the companies with the highest contribution to carbon emissions?
 ```sql
@@ -186,6 +190,9 @@ LIMIT 10;
 |"Daikin Industries, Ltd."|105600.00|
 
 #### • Discovery: 
+- The renewable energy paradox: Gamesa, which makes wind turbines (clean energy infrastructure), has by far the highest carbon footprint
+- Scale matters: The top company's footprint is 6x larger than the second-largest
+- German automotive dominance: Daimler and VW represent significant automotive manufacturing footprints
 
 ### 3.5. What are the countries with the highest contribution to carbon emissions?
 ```sql
@@ -213,6 +220,7 @@ LIMIT 10;
 |India|9328.00|
 
 #### • Discovery: 
+- Germany dominates significantly with 9.78 million units - roughly 46 times larger than the second-highest country (Lithuania). This massive difference suggests Germany either has much larger industrial operations in this dataset, different measurement standards, or represents a different type of carbon accounting.
 
 ### 3.6. What is the trend of carbon footprints (PCFs) over the years?
 ```sql
@@ -267,12 +275,18 @@ ORDER BY
 |Trading Companies & Distributors and Commercial Services & Supplies|0.00|0.00|239.00|0.00|0.00|
 |Utilities|122.00|0.00|0.00|122.00|0.00|
 
-#### • Discovery: 
+#### • Discovery:
+- Heavy materials industries ("Materials" and "Automobiles & Components") are the groups contributing the most to the carbon pollution from 100,000 to over 200,000
+- In the second position are "Technology Hardware & Equipment" and Capital Goods with around 60,000
+- Third largest are "Pharmaceuticals, Biotechnology & Life Sciences" with precisely 32,271
 
 ### 3.7. Which industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
 ![image](https://github.com/user-attachments/assets/bd4cb733-e7ba-4008-94ba-c5c9280ec988)
 
 #### • Discovery: 
+- "Automobiles & Components" dominates the dataset with highest carbon emissions than any sectors from 2015 to 2016. Subsequently it drops to significantly to 0 in 2017.
+- "Technology Hardware & Equipment" and "Pharmaceuticals, Biotechnology & Life Sciences" both skyrocket at 2014 but then simultaneously decrease in the next two years.
+- "Food, Beverage & Tobacco" sees its peak in 2016 before reducing to its normal emission.
 
 _*Note:_ there's a suspicious outliner in "Electrical Equipment and Machinery" row, so I won't include in the discovery. (In real-life, to solve this, I'll contact relevant department to clarify this case)
 
